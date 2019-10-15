@@ -13,27 +13,32 @@ body {
 }
 
 @media (max-width: 1000px) {
-    body {grid-template-areas: 
-    " . header . "
-    " .  hero . "
-    " . testimonials . "
-    " . services . "
-    " . freelance . "
-    " . footer . ";
+    body {
+    grid-template-areas: 
+        " . header . "
+        " .  hero . "
+        " . testimonials . "
+        " . services . "
+        " . freelance . "
+        " . footer . "
+        " . header-navi .";
     grid-template-columns: 1fr 600px 1fr;
         header {
             grid-template-areas: 
             " logo soc";
             .navi {
                 display: none;
+                
             }
         }
         .services {
             grid-template-areas:
             " services-txt services-txt"
-            " first-block second-block"
-            " third-block  third-block ";
-            // grid-template-columns: 1fr 1fr;
+            " first-block second-block";
+
+            .third-block {
+                display: none;
+            }
         }
         .ads {
             display: none;
@@ -43,7 +48,15 @@ body {
 
 @media (max-width: 700px) {
     body {
-    grid-template-columns: 10px 1fr 10px;
+        grid-template-areas: 
+            " . header . "
+            " .  hero . "
+            " . testimonials . "
+            " . services . "
+            " . freelance . "
+            " . footer . "
+            " . header-navi .";
+        grid-template-columns: 10px 1fr 10px;
         header {
             grid-template-areas: 
             " . logo ."
@@ -63,6 +76,13 @@ body {
             " . second-block . "
             " . third-block . ";
             grid-template-columns: 20px 1fr 20px;
+                .third-block {
+                    display: grid;
+            }
         }
+            .navi-bottom {
+                display: grid;
+                grid-area: header-navi;
+            }
     }
 }

@@ -20,7 +20,7 @@ body {
 
 @media (max-width: 1000px) {
   body {
-        grid-template-areas: " . header . " " .  hero . " " . testimonials . " " . services . " " . freelance . " " . footer . ";
+        grid-template-areas: " . header . " " .  hero . " " . testimonials . " " . services . " " . freelance . " " . footer . " " . header-navi .";
     -ms-grid-columns: 1fr 600px 1fr;
         grid-template-columns: 1fr 600px 1fr;
   }
@@ -31,7 +31,10 @@ body {
     display: none;
   }
   body .services {
-        grid-template-areas: " services-txt services-txt" " first-block second-block" " third-block  third-block ";
+        grid-template-areas: " services-txt services-txt" " first-block second-block";
+  }
+  body .services .third-block {
+    display: none;
   }
   body .ads {
     display: none;
@@ -40,6 +43,7 @@ body {
 
 @media (max-width: 700px) {
   body {
+        grid-template-areas: " . header . " " .  hero . " " . testimonials . " " . services . " " . freelance . " " . footer . " " . header-navi .";
     -ms-grid-columns: 10px 1fr 10px;
         grid-template-columns: 10px 1fr 10px;
   }
@@ -55,6 +59,17 @@ body {
         grid-template-areas: " . services-txt . " " . first-block . " " . second-block . " " . third-block . ";
     -ms-grid-columns: 20px 1fr 20px;
         grid-template-columns: 20px 1fr 20px;
+  }
+  body .services .third-block {
+    display: -ms-grid;
+    display: grid;
+  }
+  body .navi-bottom {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-row: 7;
+    -ms-grid-column: 2;
+    grid-area: header-navi;
   }
 }
 
@@ -254,6 +269,13 @@ footer {
   display: grid;
   background-color: #f5ab66;
   height: 100px;
+  text-align: center;
+}
+
+.navi-bottom {
+  display: none;
+  background-color: chartreuse;
+  height: 50px;
   text-align: center;
 }
 /*# sourceMappingURL=main.css.map */
