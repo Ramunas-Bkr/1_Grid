@@ -1,0 +1,68 @@
+body {
+    display: grid;
+    grid-template-areas: 
+    " . header header header . "
+    " . hero hero hero . "
+    " . testimonials testimonials ads . "
+    " . services services ads . "
+    " . freelance freelance ads . "
+    " . footer footer footer . ";
+    grid-template-columns: 1fr 30% 30% 30% 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+@media (max-width: 1000px) {
+    body {grid-template-areas: 
+    " . header . "
+    " .  hero . "
+    " . testimonials . "
+    " . services . "
+    " . freelance . "
+    " . footer . ";
+    grid-template-columns: 1fr 600px 1fr;
+        header {
+            grid-template-areas: 
+            " logo soc";
+            .navi {
+                display: none;
+            }
+        }
+        .services {
+            grid-template-areas:
+            " services-txt services-txt"
+            " first-block second-block"
+            " third-block  third-block ";
+            // grid-template-columns: 1fr 1fr;
+        }
+        .ads {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    body {
+    grid-template-columns: 10px 1fr 10px;
+        header {
+            grid-template-areas: 
+            " . logo ."
+            " . soc . ";
+        }
+        .testimonials {
+            grid-template-areas:
+        " . testimonials-txt . "
+        " . left . "
+        " . right . ";
+        grid-template-columns: 20px 1fr 20px;
+        }
+        .services {
+            grid-template-areas:
+            " . services-txt . "
+            " . first-block . "
+            " . second-block . "
+            " . third-block . ";
+            grid-template-columns: 20px 1fr 20px;
+        }
+    }
+}

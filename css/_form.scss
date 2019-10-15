@@ -1,0 +1,133 @@
+@mixin centred {
+    justify-self: center;
+    align-self: center;
+}
+
+header {
+    grid-area: header;
+    display: grid;
+    background-color: chartreuse;
+    grid-template-areas: 
+    " logo navi soc";
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 50px;
+    .logo {
+        @include centred();
+        display: grid;
+        grid-area: logo;
+    }
+    .navi {
+        display: grid;
+        grid-area: navi;
+        @include centred();
+    }
+    .soc {
+        display: grid;
+        grid-area: soc;
+        @include centred();
+    }
+}
+.hero {
+    grid-area: hero;
+    display: grid;
+    background-color: chocolate;
+    color: white;
+    height: 100px;
+    text-align: center;
+    padding-top: 33px;    
+}
+.testimonials {
+    grid-area: testimonials;
+    display: grid;
+    background-color: yellowgreen;
+    grid-template-areas:
+        " testimonials-txt testimonials-txt "
+        " left right ";
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    height: 300px;
+
+        .testimonials-txt {
+            grid-area: testimonials-txt;
+            display: grid;
+            text-align: center;
+        }
+        .testimonials-left {
+            grid-area: left;
+            display: grid;
+            // justify-self: center;
+            // align-self: center;
+            text-align: center;
+            background-color: royalblue;
+        }
+        .testimonials-right {
+            grid-area: right;
+            display: grid;
+            text-align: center;
+            // justify-self: center;
+            // align-self: center;
+            background-color: silver;
+        }
+}
+.ads {
+    grid-area: ads;
+    display: grid;
+    background-color: salmon;
+    text-align: center;
+    // justify-self: center;
+    // align-self: center;
+
+}
+.services {
+    grid-area: services;
+    display: grid;
+    background-color: rgb(205, 164, 243);
+    grid-template-areas:
+        " services-txt services-txt services-txt "
+        " first-block second-block third-block ";
+    // grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    text-align: center;
+    height: 500px;
+        .services-txt {
+            grid-area: services-txt;
+            display: grid;
+            }
+        .first-block {
+            grid-area: first-block;
+            display: grid;
+            background-color: darkorange;
+            text-align: center;
+        }
+        .second-block {
+            grid-area: second-block;
+            display: grid;
+            background-color: darkturquoise;
+            text-align: center;
+        }
+        .third-block {
+            grid-area: third-block;
+            display: grid;
+            background-color: gold;
+            text-align: center;
+        }
+}
+.freelance {
+    grid-area: freelance;
+    display: grid;
+    background-color: rgb(121, 238, 11);
+    height: 200px;
+    text-align: center;
+}
+
+footer {
+    grid-area: footer;
+    display: grid;
+    background-color: rgb(245, 171, 102);
+    height: 100px;
+    text-align: center;
+}
+
+
